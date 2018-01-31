@@ -3,16 +3,18 @@
      <data>
          <!-- Add fct field to existing view -->
         <record model="ir.ui.view" id="partner_fct_form_view">
-            <field name="name">partner.fctpartner</field>
+            <field name="name">partner.isFCTPartne</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="Sessions">
+                    <page string="FCT">
                         <group>
-                            <field name="FCT Partner"/>
+                            <field name="isFCTPartner"/>
                         </group>
                     </page>
                 </notebook>
+            </field>
+        </record>
      </data>
 </odoo>

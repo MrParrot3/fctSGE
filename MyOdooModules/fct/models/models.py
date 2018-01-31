@@ -8,7 +8,9 @@ class Activity(models.Model):
     start_date = fields.Date()
     description = fields.Text()
     duration = fields.Float()
-    remarks = fields.Char()
+    remarks = fields.Char(string="Remarks")
+    
+    
     
     
 
