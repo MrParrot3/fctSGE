@@ -2,8 +2,28 @@
 <odoo>
     <data>
         <!-- form view -->
-        <record model="ir.ui.view" id="course_form_view">
-            
+        <record model="ir.ui.view" id="fct_form_view">
+            <field name="name">fct.form</field>
+            <field name="model">fct.activity</field>
+            <field name="arch" type="xml">
+                <form string="FCT Form">
+                    <sheet>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="description"/>
+                            <field name="duration"/>
+                            <field name="remarks"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
         </record>
+        
+        <!-- top level menu: no parent -->
+        <menuitem id="main_fct_menu" name="FCT"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="fct_menu" name="FCT"
+                  parent="main_fct_menu"/>
     </data>
 </odoo>
