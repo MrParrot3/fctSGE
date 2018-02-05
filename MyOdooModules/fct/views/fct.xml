@@ -19,11 +19,55 @@
             </field>
         </record>
         
+        <!-- search view -->
+        <!--
+        <record model="ir.ui.view" id="fct_search_view">
+            <field name="name">fct.search</field>
+            <field name="model">fct.activity</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="start_date"/>
+                </search>
+            </field>
+        </record>
+        -->
+        
+        <!--Tree activities view-->
+        <record model="ir.ui.view" id="activity_tree_view">
+            <field name="name">activity.tree</field>
+            <field name="model">fct.activity</field>
+            <field name="arch" type="xml">
+                <tree string="Activity Tree">
+                    <field name="owner"/>
+                    <field name="date"/>
+                    <field name="duration"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        
+         <!--Action of activities-->
+        <record model="ir.actions.act_window" id="fctmanagement_list_action" >
+            <field name="name">Activity</field>
+            <field name="res_model">fct.activity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create the first activity
+                </p>           
+            </field>
+        </record>
+
+        
         <!-- top level menu: no parent -->
         <menuitem id="main_fct_menu" name="FCT"/>
         <!-- A first level in the left side menu is needed
              before using action= attribute -->
-        <menuitem id="fct_menu" name="FCT"
-                  parent="main_fct_menu"/>
+        <menuitem id="fct_menu" name="FCT" parent="main_fct_menu"/>
+        <menuitem id="activity_menu" name="Activities" parent="fct_menu" action="fctmanagement_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
     </data>
 </odoo>

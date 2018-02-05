@@ -6,4 +6,4 @@ class Partner(models.Model):
 
     isFCTPartner = fields.Boolean("FCT Partner", default=False)
 
-    
+    pupils = fields.One2many('res.users','company',string="Pupils")

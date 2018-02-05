@@ -28,7 +28,8 @@
         'views/views.xml',
         'views/templates.xml',
         'views/user.xml',
-        'views/partner.xml'
+        'views/partner.xml',
+        'views/fct.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

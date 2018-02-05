@@ -8,6 +8,9 @@ class User(models.Model):
     isPupil = fields.Boolean("Pupil", default=False)
     isTutor = fields.Boolean("Tutor", default=False)
     
+    tutor = fields.Many2one('res.users',ondelete='set null',string="Tutor",index=True)
+    company = fields.Many2one('res.partner',ondelete='set null',string="Company",index=True)
+    activities = fields.One2many('fct.activity','owner',string="Activities")
     
     @api.constrains('isPupil', 'isTutor')
     def _verify_valid_user(self):
