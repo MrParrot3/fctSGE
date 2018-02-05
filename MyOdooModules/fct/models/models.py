@@ -9,8 +9,7 @@ class Activity(models.Model):
     description = fields.Text(string='Description')
     duration = fields.Float()
     remarks = fields.Char(string="Remarks")
-    
-    owner = field.Many2one('res.users',ondelete='set null',string="Pupil",index=True)
+    owner = fields.Many2one('res.users',ondelete='set null',string="Pupil",index=True)
         
     @api.constrains('duration')
     def _verify_valid_duration(self):

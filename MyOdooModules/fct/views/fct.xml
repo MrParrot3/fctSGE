@@ -39,7 +39,7 @@
             <field name="arch" type="xml">
                 <tree string="Activity Tree">
                     <field name="owner"/>
-                    <field name="date"/>
+                    <field name="start_date"/>
                     <field name="duration"/>
                     <field name="description"/>
                 </tree>

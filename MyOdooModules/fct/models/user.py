@@ -8,6 +8,7 @@ class User(models.Model):
     isPupil = fields.Boolean("Pupil", default=False)
     isTutor = fields.Boolean("Tutor", default=False)
     
+    pupils = fields.One2many('res.users','tutor',string="Tutor")
     tutor = fields.Many2one('res.users',ondelete='set null',string="Tutor",index=True)
     company = fields.Many2one('res.partner',ondelete='set null',string="Company",index=True)
     activities = fields.One2many('fct.activity','owner',string="Activities")
