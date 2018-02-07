@@ -20,17 +20,16 @@
         </record>
         
         <!-- search view -->
-        <!--
         <record model="ir.ui.view" id="fct_search_view">
             <field name="name">fct.search</field>
             <field name="model">fct.activity</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="start_date"/>
+                    <!--<field name="name"/>--> 
                 </search>
             </field>
         </record>
-        -->
         
         <!--Tree activities view-->
         <record model="ir.ui.view" id="activity_tree_view">
@@ -42,6 +41,7 @@
                     <field name="start_date"/>
                     <field name="duration"/>
                     <field name="description"/>
+                    <field name="remarks"/>
                 </tree>
             </field>
         </record>
